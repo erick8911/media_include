@@ -11,8 +11,6 @@ module MediaInclude
   
       # I can later access that option using:
       # options[:my_opt]
-  
-
       ## Code goes here ;)  
       #source_root File.expand_path("../templates", __FILE__)
       ruta_archivo =  File.join(File.dirname(__FILE__), "templates/")
