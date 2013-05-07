@@ -23,12 +23,13 @@ module MediaInclude
         Time.now.utc.strftime("%Y%m%d%H%M%S")
       end
       
+      
       def copy_migration
         migration_template 'migration.rb', "db/migrate/media_include_create_media"
+        template "image.rb", "app/models/image.rb"
+        template "video.rb", "app/models/video.rb"
       end
       # Generator Code. Remember this is just suped-up Thor so methods are executed in order
-    
-  
     end
   end
 end

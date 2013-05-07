@@ -32,8 +32,7 @@ TODO: Write usage instructions here
 
 ## To do 
 
-Auto generate models
-Associate models
+ Try version 14, if works uninstall and reset version to 1
 
 
 
