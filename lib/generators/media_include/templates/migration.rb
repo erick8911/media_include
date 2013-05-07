@@ -9,6 +9,7 @@ class MediaIncludeCreateMedia < ActiveRecord::Migration
   
     create_table :videos do |t|
       t.attachment :video
+      t.sttring :url
       t.references :object, :polymorphic => true
       t.timestamps
     end

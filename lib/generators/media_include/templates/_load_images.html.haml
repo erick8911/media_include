@@ -1,0 +1,17 @@
+-if params[:id]
+  - model = controller_name.singularize.camelize.constantize.find(params[:id])
+  - images = model.images 
+  - videos = model.videos
+-i = 0
+-i2 = 0
+
+
+= f.simple_fields_for :images do |image|
+  = image.input :picture, :as => "file"
+  - if images && images[i]
+    = image_tag images[i].picture(:square), :class => "img-polaroid"
+    = #link_to "Crop", crop_image_path(:imagen => images[i].picture(:large)), :class => "btn btn-warning btn-mini", :method => :post
+  = image.link_to_remove "Eliminar foto", :class => "btn btn-danger"
+  
+  - i = i + 1
+%p= f.link_to_add "Agregar foto", :images, :class => "btn"

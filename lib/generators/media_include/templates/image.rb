@@ -17,28 +17,11 @@ class Image < ActiveRecord::Base
                    :s3_protocol => 'https'
 
   
- validates_attachment_presence :image
- validates_attachment_size :image, :less_than => 5.megabytes, :message => 'Solo se permite archivo menor a 5 MB'
- validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/pjpeg', 'image/x-png']
+ validates_attachment_presence :picture
+ validates_attachment_size :picture, :less_than => 5.megabytes, :message => 'Solo se permite archivo menor a 5 MB'
+ validates_attachment_content_type :picture, :content_type => ['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/pjpeg', 'image/x-png']
   
  validates :object_type, :presence => true
     
-  
-  def image
-    picture
-  end
-  
-  def image_file_name
-    picture_file_name
-  end
-  
-  def image_file_size
-    picture_file_size
-  end
-    
-  def image_content_type
-    picture_content_type
-  end   
-  
   
 end
