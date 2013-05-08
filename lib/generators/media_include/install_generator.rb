@@ -29,6 +29,8 @@ module MediaInclude
         template "image.rb", "app/models/image.rb"
         template "video.rb", "app/models/video.rb"
         template "_load_images.html.haml", "app/views/layouts/_load_images.html.haml"
+        template "_script_template.html.erb", "app/views/layouts/_script_template.html.erb"
+        template "_uploads.html.haml", "app/views/layouts/_uploads.html.haml"
       end
       # Generator Code. Remember this is just suped-up Thor so methods are executed in order
     end
