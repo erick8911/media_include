@@ -2,6 +2,7 @@ class MediaIncludeCreateMedia < ActiveRecord::Migration
   def change
     create_table :images do |t|
       t.attachment :picture
+      t.string :description
       t.references :object, :polymorphic => true
 
       t.timestamps
@@ -9,7 +10,8 @@ class MediaIncludeCreateMedia < ActiveRecord::Migration
   
     create_table :videos do |t|
       t.attachment :video
-      t.sttring :url
+      t.string :url
+      t.string :description
       t.references :object, :polymorphic => true
       t.timestamps
     end
