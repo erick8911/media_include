@@ -17,8 +17,27 @@ Or install it yourself as:
     $ gem install media_include
 
 ## Usage
+To generate the image and video models 
+    rails generate media_include:install
+    rake db:migrate
 
-TODO: Write usage instructions here
+Now we are going to attach images to Post model
+
+	class Post < ActiveRecord::Base
+	  attr_accessible :title
+	  accept_images
+	end
+
+In the form
+
+	= nested_form_for @post do |f|
+      = f.input :title
+	  =render :partial => "layouts/load_images", :locals => {:f => f}
+
+	  = f.button :submit
+
+
+
 
 ## Contributing
 
