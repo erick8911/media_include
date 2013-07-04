@@ -17,7 +17,8 @@ Or install it yourself as:
     $ gem install media_include
 
 ## Usage
-To generate the image and video models 
+To generate the image and video models
+ 
     rails generate media_include:install
     rake db:migrate
 
