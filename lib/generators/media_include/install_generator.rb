@@ -8,7 +8,6 @@ module MediaInclude
       
       # Commandline options can be defined here using Thor-like options:
       #class_option :my_opt, :type => :boolean, :default => false, :desc => "My Option"
-  
       # I can later access that option using:
       # options[:my_opt]
       ## Code goes here ;)  
@@ -18,7 +17,6 @@ module MediaInclude
       puts ruta_archivo
 
       
-      puts "Hi everybody :)"
       def self.next_migration_number(path)
         Time.now.utc.strftime("%Y%m%d%H%M%S")
       end
@@ -31,6 +29,8 @@ module MediaInclude
         template "_load_images.html.haml", "app/views/layouts/_load_images.html.haml"
         template "_script_template.html.erb", "app/views/layouts/_script_template.html.erb"
         template "_uploads.html.haml", "app/views/layouts/_uploads.html.haml"
+        template "s3.yml", "config/s3.yml"        
+        
       end
       # Generator Code. Remember this is just suped-up Thor so methods are executed in order
     end
